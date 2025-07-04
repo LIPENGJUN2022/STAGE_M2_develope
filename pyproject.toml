@@ -1,0 +1,135 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "deelogeny_m2"
+version = "0.1.0"
+description = "Learning-based analysis of the realism of phylogenetic simulation methods"
+readme = "README.md"
+license = {text = "MIT"}
+authors = [
+    {name = "LI PENGJUN", email = "PENGJUNLI2022@163.COM"}
+]
+maintainers = [
+    {name = "LI PENGJUN", email = "PENGJUNLI2022@163.COM"}
+]
+keywords = ["phylogenetics", "simulation", "machine learning", "bioinformatics"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Science/Research",
+    "Topic :: Scientific/Engineering :: Bio-Informatics",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+]
+requires-python = ">=3.10"
+dependencies = [
+    "biopython>=1.84",
+    "numpy>=1.24.0",
+    "pandas>=2.2.0",
+    "scipy>=1.14.0",
+    "matplotlib>=3.9.0",
+    "plotly>=5.24.0",
+    "seaborn>=0.11.0",
+    "tqdm>=4.67.0",
+]
+
+[project.optional-dependencies]
+classifiers = [
+    "torch>=2.0.0",
+    "scikit-learn>=1.3.0",
+    "tensorboard>=2.13.0",
+    "wandb>=0.15.0",
+]
+dev = [
+    "pytest>=7.0.0",
+    "pytest-cov>=4.0.0",
+    "black>=23.0.0",
+    "flake8>=6.0.0",
+    "mypy>=1.0.0",
+]
+all = [
+    "biopython>=1.84",
+    "numpy>=1.24.0",
+    "pandas>=2.2.0",
+    "scipy>=1.14.0",
+    "matplotlib>=3.9.0",
+    "plotly>=5.24.0",
+    "seaborn>=0.11.0",
+    "tqdm>=4.67.0",
+    "torch>=2.0.0",
+    "scikit-learn>=1.3.0",
+    "tensorboard>=2.13.0",
+    "wandb>=0.15.0",
+    "pytest>=7.0.0",
+    "pytest-cov>=4.0.0",
+    "black>=23.0.0",
+    "flake8>=6.0.0",
+    "mypy>=1.0.0",
+]
+
+[project.urls]
+Homepage = "https://github.com/LIPENGJUN2022/deelogeny-m2"
+Documentation = "https://github.com/LIPENGJUN2022/deelogeny-m2#readme"
+Repository = "https://github.com/LIPENGJUN2022/deelogeny-m2"
+"Bug Tracker" = "https://github.com/LIPENGJUN2022/deelogeny-m2/issues"
+
+[project.scripts]
+deelogeny = "deelogeny_m2.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+deelogeny_m2 = ["*.md", "*.txt", "*.json"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = ["test_*.py"]
+python_classes = ["Test*"]
+python_functions = ["test_*"]
+addopts = "-v --tb=short"
+
+[tool.black]
+line-length = 88
+target-version = ['py310']
+include = '\.pyi?$'
+extend-exclude = '''
+/(
+  # directories
+  \.eggs
+  | \.git
+  | \.hg
+  | \.mypy_cache
+  | \.tox
+  | \.venv
+  | build
+  | dist
+)/
+'''
+
+[tool.mypy]
+python_version = "3.10"
+warn_return_any = true
+warn_unused_configs = true
+disallow_untyped_defs = true
+disallow_incomplete_defs = true
+check_untyped_defs = true
+disallow_untyped_decorators = true
+no_implicit_optional = true
+warn_redundant_casts = true
+warn_unused_ignores = true
+warn_no_return = true
+warn_unreachable = true
+strict_equality = true
+
+[[tool.mypy.overrides]]
+module = [
+    "Bio.*",
+    "plotly.*",
+    "tqdm.*",
+]
+ignore_missing_imports = true 

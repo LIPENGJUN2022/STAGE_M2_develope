@@ -1,0 +1,2 @@
+[console_scripts]
+deelogeny = deelogeny_m2.cli:main

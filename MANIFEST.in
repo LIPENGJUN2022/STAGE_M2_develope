@@ -1,0 +1,39 @@
+include README.md
+include INSTALL.md
+include requirements.txt
+include LICENSE
+include MANIFEST.in
+
+# Include configuration files
+recursive-include config *
+recursive-include scripts *.py *.sh
+
+# Include example files
+recursive-include examples *.py
+
+# Include documentation
+recursive-include docs *.md *.rst *.txt
+
+# Include test files
+recursive-include tests *.py
+
+# Include data files (if any)
+recursive-include data *.fasta *.aln *.nwk *.tsv *.csv
+
+# Include simulation-classifiers
+recursive-include simulations-classifiers/src *.py
+recursive-include simulations-classifiers/tests *.py
+recursive-include simulations-classifiers/notebooks *.ipynb
+
+# Exclude unnecessary files
+global-exclude *.pyc
+global-exclude *.pyo
+global-exclude *.pyd
+global-exclude __pycache__
+global-exclude *.so
+global-exclude .DS_Store
+global-exclude .git*
+global-exclude *.egg-info
+global-exclude .pytest_cache
+global-exclude .coverage
+global-exclude htmlcov 
