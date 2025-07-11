@@ -684,3 +684,10 @@ Below is a concise summary of the main steps to run the full pipeline, from raw 
       ```
 
 This pipeline allows you to go from raw data to interactive, publication-ready visualizations step by step. Adjust parameters and paths as needed for your specific datasets and analysis goals.
+
+
+# References
+- Barnier, J. "simulations-classifiers." *GitLab*, in2p3.fr, Accessed 1 June 2025. https://gitlab.in2p3.fr/jbarnier/simulations-classifiers/-/tree/main?ref_type=heads.
+- LIPENGJUN2022. "deelogeny-m2." *GitHub*, github.com, Accessed 1 June 2025. https://github.com/LIPENGJUN2022/deelogeny-m2.
+- Deelogeny project overview. "Deelogeny Project." *Deelogeny Project Pages*, https://deelogeny.pages.in2p3.fr/. Accessed 1 June 2025.
+- Guéguen, Laurent, et al. "Bio++: efficient extensible libraries and tools for computational molecular evolution." *Molecular biology and evolution* 30.8 (2013): 1745-1750.
